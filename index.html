@@ -440,23 +440,24 @@
         ];
     
         function openModal(index) {
-            const carouselInner = document.querySelector('#portfolioCarousel .carousel-inner');
-            carouselInner.innerHTML = projects.map((project, i) => `
-                <div class="carousel-item ${i === index ? 'active' : ''}">
-                    <div class="carousel-content">
-                        <h4><i class="fa fa-book"> </i> ${project.title}</h5>
-                            <hr>
-                        <div class="px-4">
-                            <p><i class="fas fa-pen"></i> <strong>Language:</strong> ${project.description}</p>
-                            <p><i class="fas fa-code"></i> <strong>Language:</strong> ${project.language}</p>
-                            <p><i class="fas fa-user-tie"></i> <strong>Role:</strong> ${project.role}</p>
-                            <p><i class="fas fa-link"></i> <strong>Code:</strong> <a href="${project.link}" target="_blank">${project.link}</a></p>
-                        </div>
+        const carouselInner = document.querySelector('#portfolioCarousel .carousel-inner');
+        carouselInner.innerHTML = projects.map((project, i) => `
+            <div class="carousel-item ${i === index ? 'active' : ''}">
+                <div class="carousel-content">
+                    <h4><i class="fa fa-book"></i> ${project.title}</h4>
+                    <hr>
+                    <div class="px-4">
+                        ${project.description ? `<p><i class="fas fa-info-circle"></i> <strong>Description:</strong> ${project.description}</p>` : ''}
+                        <p><i class="fas fa-code"></i> <strong>Language:</strong> ${project.language}</p>
+                        <p><i class="fas fa-user-tie"></i> <strong>Role:</strong> ${project.role}</p>
+                        <p><i class="fas fa-link"></i> <strong>Code:</strong> <a href="${project.link}" target="_blank">${project.link}</a></p>
                     </div>
-                    <img src="${project.image}" class="d-block w-100 img-thumbnail fixed-size" alt="${project.title}">
                 </div>
-            `).join('');
-        }
+                <img src="${project.image}" class="d-block w-100 img-thumbnail fixed-size" alt="${project.title}">
+            </div>
+        `).join('');
+    }
+</script>
     </script>
     
     <!-- Portfolio End -->
