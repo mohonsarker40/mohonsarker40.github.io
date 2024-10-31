@@ -262,33 +262,26 @@
                 <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Portfolio</h1>
                 <h1 class="position-absolute text-uppercase text-primary">My Portfolio</h1>
             </div>
-            <div class="row">
-                <div class="col-12 text-center mb-2">
-                    <ul class="list-inline mb-4" id="portfolio-filters">
-                        <li class="btn btn-sm btn-outline-primary m-1 active" data-filter="*">All</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".first">Frontend</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".second">Backend</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".third">Full-Stack</li>
-                    </ul>
-                </div>
-            </div>
+            
             <div class="row portfolio-container">
+                <!-- one -->
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
                     <div class="position-relative overflow-hidden mb-2 portfolio-item-wrapper">
-                        <img class="img-fluid rounded fixed-size" src="img/random_user_g.png" alt="Random User Generator App">
+                        <img class="img-fluid rounded fixed-size" src="img/portfolio1.png" alt="portfolio1">
                         <div class="portfolio-hover d-flex align-items-center justify-content-center">
                             <a href="" data-toggle="modal" data-target="#portfolioModal" onclick="openModal(0)" style="text-decoration: none;">
-                                <h4 class="text-dark">Random User Generator App</h4>
+                                <h4 class="text-dark">Job Portal</h4>
                             </a>
                         </div>
                     </div>
                 </div>
+                <!--  -->
                 <div class="col-lg-4 col-md-6 mb-4 portfolio-item second">
                     <div class="position-relative overflow-hidden mb-2 portfolio-item-wrapper">
-                        <img class="img-fluid rounded fixed-size" src="img/profile.png" alt="Food Chain">
+                        <img class="img-fluid rounded fixed-size" src="img/portfolio2.png" alt="portfolio2">
                         <div class="portfolio-hover d-flex align-items-center justify-content-center">
                             <a href="" data-toggle="modal" data-target="#portfolioModal" onclick="openModal(1)" style="text-decoration: none;">
-                                <h4 class="text-dark">Food Chain</h4>
+                                <h4 class="text-dark">Random User Generator App</h4>
                             </a>
                         </div>
                     </div>
@@ -354,7 +347,7 @@
         .carousel-inner img {
             width: 800px;
             height: 300px;
-            object-fit: scale-down;
+            object-fit: contain;
             background-color: #f8f9fa;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -393,19 +386,18 @@
     <script>
         const projects = [
             {
-                title: "Random User Generator App",
-                description: "Generates random users through an API.",
-                image: "img/random_user_g.png",
-                link: "https://github.com/mohonsarker40/Random-User-Generator-App-witth-Vue",
-                language: "Vue.js",
+                title: "Job Portal -Single Page",
+                description: "Email: mohon@gmail.com,  Passowrd: 12345",
+                image: "img/portfolio1.png",
+                link: "https://jobportal.tmssict.com/admin/dashboard",
+                language: "Laravel, Vue.js, MySQL",
                 role: "Developer"
             },
             {
-                title: "Food Chain",
-                description: "A portfolio website for showcasing food chains.",
-                image: "img/profile.png",
-                link: "https://mohonsarker40.github.io/",
-                language: "HTML, CSS",
+                title: "Random User Generator App",
+                image: "img/portfolio2.png",
+                link: "https://github.com/mohonsarker40/Random-User-Generator-App-witth-Vue",
+                language: "Vue.js",
                 role: "Developer"
             }
         ];
@@ -415,8 +407,10 @@
             carouselInner.innerHTML = projects.map((project, i) => `
                 <div class="carousel-item ${i === index ? 'active' : ''}">
                     <div class="carousel-content">
-                        <h5><i class="fas fa-project-diagram"></i> ${project.title}</h5>
+                        <h4><i class="fa fa-book"> </i> ${project.title}</h5>
+                            <hr>
                         <div class="px-4">
+                            <p><i class="fas fa-pen"></i> <strong>Language:</strong> ${project.description}</p>
                             <p><i class="fas fa-code"></i> <strong>Language:</strong> ${project.language}</p>
                             <p><i class="fas fa-user-tie"></i> <strong>Role:</strong> ${project.role}</p>
                             <p><i class="fas fa-link"></i> <strong>Code:</strong> <a href="${project.link}" target="_blank">${project.link}</a></p>
